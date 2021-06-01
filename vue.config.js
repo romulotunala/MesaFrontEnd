@@ -3,6 +3,7 @@ module.exports = {
     proxy: {
       '/googleapis': {
         target: 'https://maps.googleapis.com/',
+        ws: true,
         changeOrigin: true,
         pathRewrite: {
           '^/googleapis': ''

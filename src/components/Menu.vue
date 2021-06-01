@@ -1,34 +1,58 @@
 <template>
-  <div class="headerContainer">
+  <header class="headerContainer">
     <img class="headerLogo" :src="logo" alt="">
     <nav class="headerMenu" >
       <a
         v-for="item in itemMenu"
         :key="item.id"
         href="#"
-      >{{ item.lable }}</a>
+        @click="item.func"
+      >{{ item.label }}</a>
     </nav>
-  </div>
+  </header>
 </template>
 
 <script>
+import { mapMutations, mapState } from "vuex";
+
+// Assets
 import logo from '../assets/logo.svg';
+
 
 export default {
   data() {
     return {
       logo,
-      itemMenu: [
-        {
+    }
+  },
+  computed: {
+    ...mapState(['token']), 
+    itemMenu() {
+      if(!this.token) {
+        return [{
           id: 1,
-          lable: "Login"
+          label: "Login",
+          func: this.OPEN_LOGIN,
+        }]
+      } else {
+        return [{
+          id: 1, 
+          label: 'Perfil', 
+          func: () => {
+            this.GET_PROFILE();
+            this.OPEN_PROFILE();
+          },
         },
         {
           id: 2,
-          lable: "Perfil"
-        }
-      ]
+          label: 'Logout',
+          func: this.LOGOUT,
+        }]
+      }
     }
+  },
+  methods: {
+    ...mapMutations(['OPEN_LOGIN', 'OPEN_PROFILE', 'LOGOUT', 'GET_PROFILE'])
   }
 }
 </script>

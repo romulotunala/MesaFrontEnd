@@ -19,3 +19,11 @@ export const fetchPlaces = async(info) => {
 
   return data;
 }
+
+export const fetchDetailsPlaces = async(info) => {
+  const { data } = await connection.get(
+    `place/details/json?place_id=${info}&key=${GOOGLE_KEY}`
+  );
+
+  return data;
+}

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <title>Places</title>
     <style>
       *, *::after, *::before {
@@ -12,10 +13,42 @@
         padding: 0;
         box-sizing: border-box;
       }
+      *::-webkit-scrollbar {
+        display: none;
+      }
+      @media(max-widrh: 600px) {
+        *::-webkit-scrollbar{
+          display: none;
+        }
+      }
+      html {
+        font-size: 16px;
+      }
+
+      @media (min-width: 1900px) {
+        html {
+          font-size: 20px;
+        }
+      }
+
+      @media (min-width: 2560px) {
+        html {
+          font-size: 25px;
+        }
+      }
+
+      @media (min-width: 3800px) {
+        html {
+          font-size: 40px;
+        }
+      }
+
+      @media (max-width: 648px) {
+        html {
+          font-size: 14px;
+        }
+      }
     </style>
-    <!-- <script async crossorigin="use-credentials"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5tbjbZd57yeOXuEKTQnLJVTr2cRIukqw&libraries=places&callback=initMap">
-    </script> -->
   </head>
   <body>
     <noscript>

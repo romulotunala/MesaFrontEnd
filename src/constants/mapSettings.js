@@ -43,7 +43,7 @@ const LINE_PATH_CONFIG = {
   icons: [
     {
       icon: LINE_SYMBOL_CONFIG,
-      repeat: "10px"
+      repeat: ".625rem"
     }
   ]
 };

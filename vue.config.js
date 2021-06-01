@@ -1,5 +1,15 @@
 module.exports = {
   devServer: {
-    proxy: 'https://maps.googleapis.com'
+    proxy: {
+      '/googleapis': {
+        target: 'https://maps.googleapis.com/',
+        ws: true,
+        changeOrigin: true,
+        logLevel: 'debug',
+        pathRewrite: {
+          '^/googleapis': ''
+        }
+      }
+    }
   }
 };

@@ -3,7 +3,7 @@ import axios from 'axios';
 const GOOGLE_KEY = 'AIzaSyD35GjVq94pugyIK0H69xL8lXMFw4NSRbI';
 
 const connection = axios.create({
-  baseURL: 'https://maps.googleapis.com/maps/api/',
+  baseURL: '/googleapis/maps/api/',
   headers: {
     'content-type': 'application/json'
   }

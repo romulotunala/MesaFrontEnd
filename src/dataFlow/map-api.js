@@ -4,6 +4,9 @@ const GOOGLE_KEY = 'AIzaSyD35GjVq94pugyIK0H69xL8lXMFw4NSRbI';
 
 const connection = axios.create({
   baseURL: '/googleapis/maps/api/',
+  headers: {
+    'content-type': 'application/json'
+  }
 });
 
 export const fetchBounds = async(info) => {
